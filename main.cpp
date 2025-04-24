@@ -15,7 +15,7 @@ using namespace std;
 namespace fs = std::filesystem;
 
 constexpr uint16_t PORT = 8080;
-constexpr size_t   SEND_BUF = 8 * 1024;
+constexpr size_t SEND_BUF = 8 * 1024;
 const unordered_map<string,string> MIME {
     {".html","text/html; charset=utf-8"}, {".htm","text/html"},
     {".css","text/css"},  {".js","text/javascript"},
@@ -23,7 +23,7 @@ const unordered_map<string,string> MIME {
     {".gif","image/gif"}, {".txt","text/plain"}
 };
 
-bool  sendAll(const SOCKET s,const char*buf,int len) {
+bool sendAll(const SOCKET s,const char*buf,int len) {
     while (len>0) {
         const int n=send(s,buf,len,0);
         if(n<=0) return false; buf+=n; len-=n;
