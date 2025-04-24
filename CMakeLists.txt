@@ -4,3 +4,5 @@ project(parallel_comp_lab05)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(parallel_comp_lab05 main.cpp)
+target_link_libraries(parallel_comp_lab05 ws2_32)
+
